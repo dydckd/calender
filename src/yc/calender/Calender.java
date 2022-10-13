@@ -17,19 +17,24 @@ public class Calender {
 //		System.out.println("8 9 10 11 12 13 14");
 //		System.out.println("15 16 17 18 19 20 21");
 //		System.out.println("22 23 24 25 26 27 28");
-
+		String Prompt = ">";
 		Scanner sc =  new Scanner(System.in);
 		Calender cl = new Calender();
 		
-		System.out.println("반복 횟수를 입력하세요");
-		int n = sc.nextInt();
-		for(int i=1;i<=n;i++) {
-			System.out.println("월을 입력하세요");
+		for( ; ; ) {
+		System.out.println("월을 입력하세요");
+		System.out.println(Prompt);
 		int a = sc.nextInt();
+		if(a>12 || a<=0) {
+			continue;}
+		else if(a!=-1) {
 		System.out.printf("%d월은 %d일까지 있습니다.%n",a,cl.MaxDaysOfMonth(a));
-		}	
-		System.out.println("Bye");
+		}else {
+			break;
+		}
+		}
 		
+		System.out.println("Bye");
 	}
 
 }
